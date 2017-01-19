@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<artifactId>demo-server</artifactId>
+	<packaging>jar</packaging>
+
+	<name>dome-server</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>com.lazy.demo</groupId>
+		<artifactId>demo</artifactId>
+		<relativePath>../</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+	</properties>
+
+	<dependencies>
+
+        <dependency>
+            <groupId>com.lazy.demo</groupId>
+            <artifactId>demo-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>com.lazy.demo</groupId>
+			<artifactId>demo-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.tmatesoft.svnkit</groupId>
+		  <artifactId>svnkit</artifactId>
+		  <version>1.8.5</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.gitlab</groupId>
+		    <artifactId>java-gitlab-api</artifactId>
+		    <version>1.2.7</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.eclipse.mylyn.github</groupId>
+		    <artifactId>org.eclipse.egit.github.core</artifactId>
+		    <version>2.1.5</version>
+		</dependency>
+		<!-- 
+		<dependency>
+		    <groupId>org.jenkins-ci.main</groupId>
+		    <artifactId>jenkins-core</artifactId>
+		    <version>1.641</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.jenkins-ci.plugins</groupId>
+		    <artifactId>git</artifactId>
+		    <version>3.0.2-beta-2</version>
+		</dependency>
+		 -->
+	</dependencies>
+	
+</project>

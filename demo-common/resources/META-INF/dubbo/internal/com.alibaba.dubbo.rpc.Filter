@@ -1,0 +1,3 @@
+ccKey=com.lazy.demo.dubbo.filter.ClientContextFilter
+clientLogFilter=com.lazy.demo.dubbo.filter.ClientLogFilter
+serviceLogFilter=com.lazy.demo.dubbo.filter.InterfaceLogFilter

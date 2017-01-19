@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+      <groupId>com.lazy.demo</groupId>
+       <artifactId>demo</artifactId>
+      <relativePath>../</relativePath>
+      <version>0.0.1-SNAPSHOT</version>
+   </parent>
+
+  <artifactId>demo-rest</artifactId>
+  <packaging>jar</packaging>
+
+  <name>dome-rest</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.version>0.0.1-SNAPSHOT</project.version>
+  </properties>
+
+  <dependencies>
+  
+  <dependency>
+       <groupId>com.lazy.demo</groupId>
+       <artifactId>demo-common</artifactId>
+       <version>${project.version}</version>
+   </dependency>
+  
+   <dependency>
+       <groupId>com.lazy.demo</groupId>
+       <artifactId>demo-api</artifactId>
+       <version>${project.version}</version>
+   </dependency>
+   
+   <dependency>
+       <groupId>com.lazy.demo</groupId>
+       <artifactId>demo-server</artifactId>
+       <version>${project.version}</version>
+   </dependency>
+ 
+  </dependencies>
+  
+   <build>
+        <plugins>
+            <!-- war打包插件, 设定war包名称不带版本号 -->
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-jar-plugin</artifactId>  
+                <configuration>  
+                    <warName>demo-rest</warName>
+                    <archive>  
+                        <manifest>  
+                            <addClasspath>true</addClasspath>  
+                            <classpathPrefix></classpathPrefix>  
+                            <mainClass>com.lazy.demo.AppMain</mainClass>  
+                        </manifest>  
+                    </archive>  
+                </configuration>  
+            </plugin>        
+        </plugins>
+    </build>
+  
+</project>
