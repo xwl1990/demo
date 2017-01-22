@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ck.dubbo.api.UserInfoApi;
 import com.lazy.demo.sys.UserInfoSvc;
 import com.lazy.demo.web.common.BascController;
 
@@ -31,8 +30,6 @@ public class UserInfoController extends BascController{
 
     @Autowired
     private UserInfoSvc userInfoSvc;
-    @Autowired
-    private UserInfoApi userInfoApi;
     
     
     @RequestMapping(value = "/test", method = RequestMethod.GET)
@@ -40,7 +37,6 @@ public class UserInfoController extends BascController{
     public JSONObject index1() {
         JSONObject json = new JSONObject();
         
-        json.put("data",userInfoApi.getUser("1231231"));
         LOG.info(json.toJSONString());
         return json;
     }

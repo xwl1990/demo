@@ -6,27 +6,22 @@ $(function() {
 
 	$('#commit').click(function() {
 		var money = $("#money").val();
+		var parametDate={money:money,date:new Date(),desc:'微信支付'};
 		$.ajax({
-			url : 'http://localhost:8000/pay',
+			url : 'http://127.0.0.1:8081/demo/pay',
 			type : 'POST', // GET
+			contentType: "application/json",
 			async : true, // 或false,是否异步
-			data : {
-				REFERER:"pay",
-				money : money,
-				date : new Date()
-			},
-			timeout : 5000, // 超时时间
+			data : JSON.stringify(parametDate),
+			timeout : 50000, // 超时时间
 			dataType : 'json', // 返回的数据格式：json/xml/html/script/jsonp/text
-			beforeSend : function(xhr) {
-				console.log(xhr)
-				console.log('发送前')
-			},
 			success : function(data, textStatus, jqXHR) {
 				console.log(data)
 				console.log(textStatus)
 				console.log(jqXHR)
+				console.log(data.data.appid)
 				// 调起支付
-				onBridgeReady(data.data)
+				//onBridgeReady(data.data)
 			},
 			error : function(xhr, textStatus) {
 				console.log('错误')
@@ -37,7 +32,6 @@ $(function() {
 				console.log('结束')
 			}
 		})
-
 	});
 
 	var onBridgeReady = function(data) {

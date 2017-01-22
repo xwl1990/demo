@@ -9,6 +9,8 @@ public interface DubboCst {
     String CONSUMER_LOGGER_ACCESS = "dubbo-consumer-access";
     
     String PROVIDE_INTERFACE_LOG_KEY = "serviceLogFilter";
+    
+    String WEB_INTERFACE_LOG_KEY = "com-interface";
     /**
      * 上下文事务ID
      */
